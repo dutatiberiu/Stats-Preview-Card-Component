@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+/*colors*/
+:root{
+  /*  ### Primary */
+--very-darkBlue: hsl(233, 47%, 7%);
+--dark-desaturatedBlue: hsl(244, 38%, 16%);
+--softViolet: hsl(277, 64%, 61%);
+
+  /*    ### Neutral */
+
+--white: hsl(0, 0%, 100%);
+--white-mainParagraph: hsla(0, 0%, 100%, 0.75);
+--white-statsHeadings: hsla(0, 0%, 100%, 0.6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter',
+        sans-serif;
+    min-height: 100vh;
+    background:var(--very-darkBlue);
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+
+.main{
+    max-width:63.75rem;
+    margin:0 auto;
+}
+
+.wrapper{
+    background-color:var(--dark-desaturatedBlue);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 2rem;
+}
+
+.imageComponent img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.imageComponent{
+    position: relative;
+}
+.imageComponent::after{
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color:var(--softViolet);
+    opacity: 0.5;
+}
+
+.textComponent{
+    padding: 13%;
+}
+
+.tittle{
+    color: var(--white);
+    font-weight: 700;
+    padding-bottom: 1.375rem;
+}
+
+.tittle span{
+    color: var(--softViolet);
+}
+
+.description{
+    color: var(--white-mainParagraph);
+    line-height: 1.8;
+}
+
+.stats{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 3.75rem;
+}
+
+.stats p.numbers{
+    color: var(--white);
+    font-size: 1.563rem;
+    font-weight: 700;
+    margin-bottom: 0.438rem;
+}
+
+.stats p {
+    color: var(--white-statsHeadings);
+}
+
+@media only screen and (max-width: 425px){
+    body{
+        text-align: center;
+    }
+
+    .wrapper{
+        grid-template-columns: 1fr;
+    }
+    .imageComponent{
+        order: -1;
+    }
+
+    .textComponent{
+        padding: 12% 8%;
+    }
+
+    .stats{
+        flex-direction: column;
+        padding-top: 1.875em;
+    }
+
+    .stats div{
+        margin-top: 1.25em;
+    }
+
+    .tittle{
+        font-size: 1.45em;
+        line-height: 1.4;
+    }
+
+}
+
+@media only screen and (max-width: 768px) and (min-width: 426px) {
+    body {
+        font-size: 12px;
+    }
+
+    .textComponent {
+        padding: 12%;
+    }
+
+    .tittle {
+        font-size: 1.375em;
+    }
+
+    .stats {
+        padding-top: 1.875em;
+    }
+
+    .stats p.numbers {
+        font-size: 1.063em;
+    }
+}
